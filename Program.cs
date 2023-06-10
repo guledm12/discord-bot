@@ -3,9 +3,10 @@ using Discord;
 using Discord.Commands;
 using Discord.WebSocket;
 using Microsoft.Extensions.DependencyInjection;
+using T;
 
-namespace DiscordBot{
-    class Program{
+namespace DiscordBot {
+    class Program {
         static void Main(string[] args) => new Program().RunBotAsync().GetAwaiter().GetResult();
         private DiscordSocketClient _client;
         private CommandService _commands;
@@ -19,7 +20,7 @@ namespace DiscordBot{
                 .AddSingleton(_commands)
                 .BuildServiceProvider();
 
-            string token = "MTExNjg0NTYzMzczNTc2NjA5OA.GcsmzQ.xXzW2FCGneaoCHBbwTA914wkbw9NulVvbL2TlI";
+            string token = T.Token.A;
 
             _client.Log += _client_Log;
 
